@@ -38,6 +38,35 @@ img {
 }
 
 /* --- Header --- */
+/* --- Header Logo Image --- */
+.logo {
+    display: flex; /* Makes the logo and image align horizontally */
+    align-items: center; /* Vertically centers the items */
+    gap: 10px; /* Adds space between the image and the text */
+}
+
+.logo-img {
+    height: 65px; /* Adjust this value to match the desired "word size" */
+    width: auto; /* Maintain aspect ratio */
+    max-width: none; /* Override default img max-width if any */
+    object-fit: contain; /* Ensures the whole image is visible within its bounds */
+}
+
+/* Adjust logo text size if needed to align perfectly with the image */
+.logo {
+    font-size: 32px; /* Keep your original size for the text */
+}
+
+/* Media query for smaller screens if the logo gets too big */
+@media (max-width: 480px) {
+    .logo-img {
+        height: 28px; /* Slightly smaller on very small screens */
+    }
+    .logo {
+        font-size: 28px; /* Match text size reduction */
+    }
+}
+
 .header {
     background-color: var(--color-background-light);
     padding: 20px 0;
