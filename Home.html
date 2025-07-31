@@ -9,17 +9,17 @@
     <!-- Link to your main stylesheet -->
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Specific styles for Home page hero background image */
+        /* Specific styles for Home page hero - UPDATED TO USE YOUR LOCAL 1.JPG */
         .hero.home-hero {
-            background: url('https://images.unsplash.com/photo-1511920170033-0c8a14979207?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80') no-repeat center center/cover;
-            /* The overlay for text readability is handled by .hero::before in style.css */
+            background: url('images/1.jpg') no-repeat center center/cover; /* <<< CHANGED HERE */
+            /* You can adjust overlay or text color specific to this hero if needed */
         }
 
-        /* Styles for the grid of content sections on the home page */
+        /* --- Additional styles from your previous Home.html, ensure they are kept if needed --- */
         .home-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
-            gap: 30px; /* Space between grid items */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             margin-top: 50px;
             text-align: center;
         }
@@ -29,18 +29,18 @@
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .grid-item:hover {
-            transform: translateY(-5px); /* Lift effect on hover */
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* Enhanced shadow on hover */
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
         }
 
         .grid-item img {
             width: 100%;
-            max-height: 200px; /* Constrain height of grid images for consistency */
-            object-fit: cover; /* Ensures image covers area without distortion */
+            max-height: 200px; /* Constrain height of grid images */
+            object-fit: cover;
             border-radius: 8px;
             margin-bottom: 20px;
         }
@@ -61,7 +61,7 @@
 
         .grid-item .btn {
             display: inline-block;
-            background-color: var(--color-accent); /* Green button for call to action */
+            background-color: var(--color-accent);
             color: var(--color-text-light);
             padding: 10px 20px;
             border-radius: 5px;
@@ -72,14 +72,13 @@
         }
 
         .grid-item .btn:hover {
-            background-color: #6a7c5a; /* Slightly darker green on hover */
+            background-color: #6a7c5a; /* Slightly darker green */
             text-decoration: none;
         }
 
-        /* Responsive adjustments for the grid */
         @media (max-width: 768px) {
             .home-grid {
-                grid-template-columns: 1fr; /* Stack columns vertically on smaller screens */
+                grid-template-columns: 1fr; /* Stack columns on smaller screens */
             }
         }
     </style>
@@ -89,7 +88,10 @@
     <!-- Header Section (Consistent across all pages) -->
     <header class="header">
         <div class="header-content">
-            <div class="logo">The Coffee <span>Chronicles</span></div>
+            <div class="logo">
+                <img src="images/J.jpg" alt="Coffee Bean Logo" class="logo-img">
+                The Coffee <span>Chronicles</span>
+            </div>
             <nav class="nav">
                 <ul>
                     <li><a href="Home.html">Home</a></li>
@@ -160,6 +162,32 @@
         </nav>
         <p>© 2025 The Coffee Chronicles. All rights reserved.</p>
     </footer>
+
+    <!-- Dify Chatbot Code (Add this block if it's not already in your Home.html) -->
+    <script>
+     window.difyChatbotConfig = {
+      token: 'AKiDGDZQXfPG8zB6',
+      baseUrl: 'http://botfather.store',
+      systemVariables: {
+        // user_id: 'YOU CAN DEFINE USER ID HERE',
+      },
+     }
+    </script>
+    <script
+     src="http://botfather.store/embed.min.js"
+     id="AKiDGDZQXfPG8zB6"
+     defer>
+    </script>
+    <style>
+      #dify-chatbot-bubble-button {
+        background-color: #1C64F2 !important;
+      }
+      #dify-chatbot-bubble-window {
+        width: 24rem !important;
+        height: 40rem !important;
+      }
+    </style>
+    <!-- Dify Chatbot Code Ends -->
 
 </body>
 </html>
