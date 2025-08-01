@@ -11,21 +11,22 @@
     <style>
         /* Specific styles for Home page hero - UPDATED TO USE YOUR LOCAL 1.JPG */
         .hero.home-hero {
-            background: url('images/1.jpg') no-repeat center center/cover; /* <<< CHANGED HERE */
+            background: url('images/1.jpg') no-repeat center center/cover;
             /* You can adjust overlay or text color specific to this hero if needed */
         }
 
         /* --- Additional styles from your previous Home.html, ensure they are kept if needed --- */
         .home-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr; /* Stack columns vertically as requested */
             gap: 30px;
             margin-top: 50px;
             text-align: center;
         }
 
+        /* Default .grid-item styles (will be overridden by .parallax-grid-item where applicable) */
         .grid-item {
-            background-color: #fff;
+            background-color: #fff; /* Default white background for grid items */
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
@@ -37,13 +38,16 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.12);
         }
 
+        /* REMOVED: .grid-item img rule here because images are now handled as backgrounds for parallax */
+        /*
         .grid-item img {
             width: 100%;
-            max-height: 200px; /* Constrain height of grid images */
+            max-height: 200px;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 20px;
         }
+        */
 
         .grid-item h3 {
             font-family: 'Playfair Display', serif;
@@ -78,8 +82,72 @@
 
         @media (max-width: 768px) {
             .home-grid {
-                grid-template-columns: 1fr; /* Stack columns on smaller screens */
+                /* This media query rule is now redundant as grid-template-columns: 1fr is set by default for .home-grid */
+                /* grid-template-columns: 1fr; */
             }
+        }
+
+        /* Common styles for all parallax grid items - these override .grid-item for parallax boxes */
+        .parallax-grid-item {
+            position: relative;
+            overflow: hidden;
+            background-color: transparent; /* Ensures the background image is visible */
+            min-height: 400px; /* Taller height as requested */
+            display: flex; /* For centering content */
+            flex-direction: column; /* For centering content */
+            justify-content: center; /* Vertically centers content */
+            align-items: center; /* Horizontally centers content */
+            text-align: center; /* Ensures text itself is centered */
+            padding: 30px; /* Ensure internal spacing */
+        }
+
+        /* Overlay for all parallax grid items */
+        .parallax-grid-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.45); /* Semi-transparent dark overlay */
+            border-radius: 12px;
+            z-index: 0;
+        }
+
+        /* Text and button styling for all parallax grid items (light color for contrast) */
+        .parallax-grid-item h3,
+        .parallax-grid-item p {
+            color: var(--color-text-light);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            position: relative;
+            z-index: 1; /* Brings text above the overlay */
+        }
+
+        .parallax-grid-item .btn {
+            background-color: var(--color-accent);
+            color: var(--color-text-light);
+            position: relative;
+            z-index: 1; /* Brings button above the overlay */
+        }
+
+        .parallax-grid-item .btn:hover {
+            background-color: #6a7c5a;
+        }
+
+        /* Specific background images and parallax attachment for each box */
+        #history-parallax-box {
+            background: url('images/M.jpg') no-repeat center center/cover;
+            background-attachment: fixed; /* The parallax magic */
+        }
+
+        #cultivation-parallax-box {
+            background: url('images/D.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+        }
+
+        #brewing-parallax-box {
+            background: url('images/U.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
         }
     </style>
 </head>
@@ -125,22 +193,22 @@
 
             <!-- Grid for linking to main content sections -->
             <div class="home-grid">
-                <div class="grid-item">
-                    <img src="https://images.unsplash.com/photo-1517721535728-fd06977799d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Ancient coffee beans">
+                <!-- History Parallax Box -->
+                <div class="grid-item parallax-grid-item" id="history-parallax-box">
                     <h3>The Rich History</h3>
                     <p>Unravel the mystical origins and the incredible journey of coffee across continents and centuries.</p>
                     <a href="History.html" class="btn">Discover More</a>
                 </div>
 
-                <div class="grid-item">
-                    <img src="https://images.unsplash.com/photo-1509355605051-40aa289650ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Coffee plants in a plantation">
+                <!-- Cultivation Parallax Box -->
+                <div class="grid-item parallax-grid-item" id="cultivation-parallax-box">
                     <h3>From Crop to Cup: Cultivation</h3>
                     <p>Learn about the diverse growing regions, farming practices, and the meticulous care behind every bean.</p>
                     <a href="Cultivation.html" class="btn">Explore Cultivation</a>
                 </div>
 
-                <div class="grid-item">
-                    <img src="https://images.unsplash.com/photo-1559885834-93ff9a59b582?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Pour over coffee brewing">
+                <!-- Brewing Parallax Box -->
+                <div class="grid-item parallax-grid-item" id="brewing-parallax-box">
                     <h3>The Art of Brewing</h3>
                     <p>Master the techniques and secrets behind brewing various types of coffee, from espresso to cold brew.</p>
                     <a href="Brewing.html" class="btn">Learn to Brew</a>
