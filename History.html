@@ -6,10 +6,13 @@
     <title>The Journey of Coffee - A Rich History</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         /* Specific hero image for History page - UPDATED TO USE YOUR LOCAL A.JPG */
         .hero.history-hero { /* Added .history-hero class to target this section specifically */
-            background: url('images/A.jpg') no-repeat center center/cover; /* <<< CHANGED HERE */
+            background: url('images/A.jpg') no-repeat center center/cover;
+            background-attachment: fixed; /* ADDED for parallax effect */
         }
     </style>
 </head>
@@ -34,7 +37,7 @@
 
     <!-- Changed to include "history-hero" class -->
     <section class="hero history-hero">
-        <div class="hero-content">
+        <div class="hero-content" data-aos="fade-down" data-aos-duration="1000">
             <h1>The Journey of Coffee: A Global Story</h1>
             <p>From ancient legends in Ethiopia to a beloved daily ritual worldwide, discover the captivating history of coffee.</p>
         </div>
@@ -42,63 +45,63 @@
 
     <div class="container">
         <main class="article-content">
-            <h2>The Mythical Beginnings: Ethiopia</h2>
-            <p>
+            <h2 data-aos="from-coffee-heat" data-aos-duration="1200">The Mythical Beginnings: Ethiopia</h2>
+            <p data-aos="fade-up" data-aos-offset="100">
                 The story of coffee beans begins, as many legends do, with a watchful goat herder in ancient Ethiopia. The popular tale attributes the discovery of coffee to Kaldi, a young goat herder who noticed his goats becoming unusually energetic after eating red berries from a certain tree. Curious, he tasted the berries himself and felt a similar invigorating effect.
             </p>
-            <p>
+            <p data-aos="fade-up" data-aos-offset="100">
                 He shared his findings with the abbot of a local monastery, who initially dismissed the berries as the devil's work and threw them into a fire. However, the enticing aroma that wafted from the roasting beans prompted the abbot to rake them from the embers. He then ground them, dissolved them in hot water, and drank the concoction, finding that it helped him stay awake during long hours of prayer. Thus, the world's first cup of coffee was supposedly brewed.
             </p>
-            <img src="images/K.jpg" alt="Ancient illustration of Kaldi and his goats discovering coffee" class="content-image-full">
-            <p class="image-caption">Legend has it that coffee was discovered by a goat herder in Ethiopia.</p>
+            <img src="images/K.jpg" alt="Ancient illustration of Kaldi and his goats discovering coffee" class="content-image-full" data-aos="zoom-in" data-aos-duration="1000">
+            <p class="image-caption" data-aos="fade-up" data-aos-offset="50">Legend has it that coffee was discovered by a goat herder in Ethiopia.</p>
 
-            <h3>The Sacred Brew: Spread to the Arabian Peninsula</h3>
-            <p>
+            <h3 data-aos="fade-right" data-aos-offset="150">The Sacred Brew: Spread to the Arabian Peninsula</h3>
+            <p data-aos="fade-up" data-aos-offset="100">
                 From its humble beginnings in Ethiopia, coffee made its clandestine journey across the Red Sea to the Arabian Peninsula, primarily Yemen, around the 15th century. Here, it was first systematically cultivated and traded. Sufi mystics were among the first to appreciate its stimulating effects, using it to prolong their hours of devotion and contemplation.
             </p>
-            <p>
+            <p data-aos="fade-up" data-aos-offset="100">
                 The popularity of coffee quickly spread throughout the Islamic world. By the 16th century, it had reached Persia, Egypt, Syria, and Turkey. Coffee houses, known as *qahveh khaneh*, became integral social and intellectual hubs. These establishments were more than just places to drink; they were centers for conversation, music, storytelling, and even political discourse, shaping the cultural landscape of the time.
             </p>
-            <img src="images/M.jpg" alt="Arabian ride camel and written Coffee Merchant" class="content-image-full">
-            <p class="image-caption">Arabian ride camel and written Coffee Merchant.</p>
-            <p>
+            <img src="images/M.jpg" alt="Arabian ride camel and written Coffee Merchant" class="content-image-full" data-aos="zoom-in" data-aos-duration="1000">
+            <p class="image-caption" data-aos="fade-up" data-aos-offset="50">Arabian ride camel and written Coffee Merchant.</p>
+            <p data-aos="fade-up" data-aos-offset="100">
                 The meticulous preparation of coffee became an art form, especially in the Ottoman Empire, where elaborate rituals for serving coffee were developed, reflecting its esteemed status. The mystique surrounding coffee, combined with its invigorating properties, led to its rapid adoption across diverse cultures.
             </p>
             <div class="clearfix"></div>
 
-            <blockquote>
+            <blockquote data-aos="fade-left" data-aos-offset="150">
                 <p>"As soon as the coffee is in your stomach, there is a general commotion. Ideas begin to stir... the ideas move like battalions of a grand army on the battlefield."</p>
                 <cite>— Honoré de Balzac</cite>
             </blockquote>
 
-            <h3>From Controversy to Culture: Coffee Reaches Europe</h3>
-            <p>
+            <h3 data-aos="fade-right" data-aos-offset="150">From Controversy to Culture: Coffee Reaches Europe</h3>
+            <p data-aos="fade-up" data-aos-offset="100">
                 Coffee arrived in Europe in the 17th century, initially met with skepticism and even condemnation. Some European clergymen referred to it as "Satan's bitter invention." However, Pope Clement VIII, upon tasting the beverage, famously declared it "so delicious that it would be a pity to let the infidels have exclusive use of it." His blessing opened the floodgates.
             </p>
-            <p>
+            <p data-aos="fade-up" data-aos-offset="100">
                 Venice, a major trading hub, was among the first European cities to embrace coffee. The first coffee house opened in England in 1652, and soon, "penny universities" (as they were known, due to the cost of a cup) sprouted across Europe. These establishments became vibrant centers of intellectual exchange, business dealings, and social gathering, playing a significant role in the Enlightenment era.
             </p>
-            <img src="images/L.jpg" alt="Trade root from arabian peninsula, Europe, and the Americas." class="content-image-full">
-            <p class="image-caption">Trade root from arabian peninsula, Europe, and the Americas.</p>
-            <p>
+            <img src="images/L.jpg" alt="Trade root from arabian peninsula, Europe, and the Americas." class="content-image-full" data-aos="zoom-in" data-aos-duration="1000">
+            <p class="image-caption" data-aos="fade-up" data-aos-offset="50">Trade root from arabian peninsula, Europe, and the Americas.</p>
+            <p data-aos="fade-up" data-aos-offset="100">
                 The insatiable demand for coffee fueled its cultivation in new territories. The Dutch were pioneers, establishing thriving coffee plantations in their colonies like Java (Indonesia) and Ceylon (Sri Lanka). The French, too, contributed to its global spread by introducing coffee to the Americas.
             </p>
             <div class="clearfix"></div>
 
-            <h3>The Global Phenomenon: Coffee in the Americas and Beyond</h3>
-            <p>
+            <h3 data-aos="fade-right" data-aos-offset="150">The Global Phenomenon: Coffee in the Americas and Beyond</h3>
+            <p data-aos="fade-up" data-aos-offset="100">
                 The journey of coffee to the Americas is often attributed to Gabriel de Clieu, a French naval officer who, in 1723, braved a perilous journey to transport a single coffee seedling from the Royal Botanical Garden in Paris to Martinique. This one plant is believed to be the progenitor of countless coffee trees across the Caribbean and Central and South America.
             </p>
-            <p>
+            <p data-aos="fade-up" data-aos-offset="100">
                 Brazil, with its vast fertile lands and ideal climate, quickly became the world's largest coffee producer, a position it still largely holds today. The expansion of coffee cultivation dramatically reshaped the economies and societies of many Latin American nations, creating a global commodity that transcended borders.
             </p>
-            <img src="images/P.jpg" alt="Maxwell Coffee House." class="content-image-full">
-            <p class="image-caption">Maxwell Coffee House.</p>
-            <p>
+            <img src="images/P.jpg" alt="Maxwell Coffee House." class="content-image-full" data-aos="zoom-in" data-aos-duration="1000">
+            <p class="image-caption" data-aos="fade-up" data-aos-offset="50">Maxwell Coffee House.</p>
+            <p data-aos="fade-up" data-aos-offset="100">
                 Today, coffee is not just a beverage; it's a global industry, a cultural touchstone, and an integral part of daily life for billions. Its journey from a humble Ethiopian berry to a worldwide phenomenon is a testament to its enduring appeal and its profound impact on human history.
             </p>
 
-            <a href="#" class="btn-primary">Explore More Coffee Facts</a>
+            <a href="#" class="btn-primary" data-aos="fade-in" data-aos-offset="100">Explore More Coffee Facts</a>
 
         </main>
     </div>
@@ -140,6 +143,16 @@
       }
     </style>
     <!-- Dify Chatbot Code Ends -->
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            mirror: true, // Animations reverse on scroll up
+            once: false,  // Animations repeat every time you scroll past them
+            duration: 800 // Default animation duration in ms
+        });
+    </script>
 
 </body>
 </html>
