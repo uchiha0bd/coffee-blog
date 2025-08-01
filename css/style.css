@@ -179,6 +179,8 @@ img {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
+
+
 /* --- Main Content Layout --- */
 .container {
     max-width: 1000px; /* Slightly narrower for more focused content */
@@ -187,10 +189,10 @@ img {
 }
 
 .article-content {
-    background-color: #FFFFFF;
+    background-color: var(--color-background-light); /* Changed from #FFFFFF */
     padding: 45px 50px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    border-radius: 12px;
+    /* box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 12px; */
     line-height: 1.8;
 }
 
