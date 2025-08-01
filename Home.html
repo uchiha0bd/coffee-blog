@@ -8,10 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- Link to your main stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         /* Specific styles for Home page hero - UPDATED TO USE YOUR LOCAL 1.JPG */
         .hero.home-hero {
             background: url('images/1.jpg') no-repeat center center/cover;
+            background-attachment: fixed; /* ADDED for parallax effect */
             /* You can adjust overlay or text color specific to this hero if needed */
         }
 
@@ -171,42 +174,42 @@
 
     <!-- Hero Section for Home Page -->
     <section class="hero home-hero">
-        <div class="hero-content">
+        <div class="hero-content" data-aos="fade-down" data-aos-duration="1000">
             <h1>Your Daily Ritual, Our Shared Passion</h1>
             <p>Dive deep into the world of coffee, from its ancient roots to the perfect cup in your hand.</p>
-            <a href="History.html" class="btn-primary">Start Your Coffee Journey</a>
+            <a href="History.html" class="btn-primary" data-aos="fade-up" data-aos-delay="500">Start Your Coffee Journey</a>
         </div>
     </section>
 
     <!-- Main Content Container -->
     <div class="container">
         <main class="article-content">
-            <h2>Explore the World of Coffee</h2>
-            <p>
+            <h2 data-aos="from-coffee-heat" data-aos-duration="1200">Explore the World of Coffee</h2>
+            <p data-aos="fade-up" data-aos-offset="100">
                 Welcome to The Coffee Chronicles! We are passionate about everything coffee – its fascinating history, the intricate process of cultivation, and the art of brewing that perfect cup. Whether you're a seasoned barista or just starting your coffee adventure, you'll find something to intrigue you here.
             </p>
-            <p>
+            <p data-aos="fade-up" data-aos-offset="100">
                 Our mission is to share comprehensive, engaging, and accurate information about coffee, celebrating its global impact and cultural significance. Join us as we explore the bean's journey from crop to cup.
             </p>
 
             <!-- Grid for linking to main content sections -->
             <div class="home-grid">
                 <!-- History Parallax Box -->
-                <div class="grid-item parallax-grid-item" id="history-parallax-box">
+                <div class="grid-item parallax-grid-item" id="history-parallax-box" data-aos="fade-up" data-aos-duration="1000">
                     <h3>The Rich History</h3>
                     <p>Unravel the mystical origins and the incredible journey of coffee across continents and centuries.</p>
                     <a href="History.html" class="btn">Discover More</a>
                 </div>
 
                 <!-- Cultivation Parallax Box -->
-                <div class="grid-item parallax-grid-item" id="cultivation-parallax-box">
+                <div class="grid-item parallax-grid-item" id="cultivation-parallax-box" data-aos="fade-up" data-aos-duration="1000">
                     <h3>From Crop to Cup: Cultivation</h3>
                     <p>Learn about the diverse growing regions, farming practices, and the meticulous care behind every bean.</p>
                     <a href="Cultivation.html" class="btn">Explore Cultivation</a>
                 </div>
 
                 <!-- Brewing Parallax Box -->
-                <div class="grid-item parallax-grid-item" id="brewing-parallax-box">
+                <div class="grid-item parallax-grid-item" id="brewing-parallax-box" data-aos="fade-up" data-aos-duration="1000">
                     <h3>The Art of Brewing</h3>
                     <p>Master the techniques and secrets behind brewing various types of coffee, from espresso to cold brew.</p>
                     <a href="Brewing.html" class="btn">Learn to Brew</a>
@@ -254,6 +257,16 @@
       }
     </style>
     <!-- Dify Chatbot Code Ends -->
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            mirror: true, // Animations reverse on scroll up
+            once: false,  // Animations repeat every time you scroll past them
+            duration: 800 // Default animation duration in ms
+        });
+    </script>
 
 </body>
 </html>

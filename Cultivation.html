@@ -6,10 +6,13 @@
     <title>Coffee Cultivation - The Coffee Chronicles</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         /* Specific hero image for Cultivation page */
         .hero.cultivation-hero {
             background: url('images/C.jpg') no-repeat center center/cover;
+            background-attachment: fixed; /* ADDED for parallax effect */
         }
     </style>
 </head>
@@ -33,7 +36,7 @@
     </header>
 
     <section class="hero cultivation-hero">
-        <div class="hero-content">
+        <div class="hero-content" data-aos="fade-down" data-aos-duration="1000">
             <h1>From Seed to Bean: The Art of Coffee Cultivation</h1>
             <p>Explore the intricate process of growing, harvesting, and preparing coffee beans around the world.</p>
         </div>
@@ -41,25 +44,25 @@
 
     <div class="container">
         <main class="article-content">
-            <h2>The Ideal Growing Conditions for Coffee</h2>
-            <p>
+            <h2 data-aos="from-coffee-heat" data-aos-duration="1200">The Ideal Growing Conditions for Coffee</h2>
+            <p data-aos="fade-up" data-aos-offset="100">
                 Coffee plants thrive in a specific set of environmental conditions, often referred to as the "Coffee Belt" – a region between the Tropics of Cancer and Capricorn. Ideal conditions include:
             </p>
-            <ul>
+            <ul data-aos="fade-up" data-aos-offset="100">
                 <li><strong>Temperature:</strong> Consistent moderate temperatures, typically between 60-70°F (15-25°C).</li>
                 <li><strong>Rainfall:</strong> Abundant rainfall, usually 60-80 inches (150-200 cm) per year, with distinct wet and dry seasons.</li>
                 <li><strong>Altitude:</strong> High altitudes are generally preferred, especially for Arabica beans, contributing to their complex flavors.</li>
                 <li><strong>Soil:</strong> Rich, well-drained volcanic soil is optimal, providing essential nutrients.</li>
                 <li><strong>Shade:</strong> Many coffee varieties benefit from shade, which helps the beans mature slowly, developing richer flavors.</li>
             </ul>
-            <img src="images/6.jpg" alt="Coffee cherries on a branch" class="content-image-full">
-            <p class="image-caption">Ripe coffee cherries ready for harvest.</p>
+            <img src="images/6.jpg" alt="Coffee cherries on a branch" class="content-image-full" data-aos="zoom-in" data-aos-duration="1000">
+            <p class="image-caption" data-aos="fade-up" data-aos-offset="50">Ripe coffee cherries ready for harvest.</p>
 
-            <h3>Key Coffee Varieties: Arabica vs. Robusta</h3>
-            <p>
+            <h3 data-aos="fade-right" data-aos-offset="150">Key Coffee Varieties: Arabica vs. Robusta</h3>
+            <p data-aos="fade-up" data-aos-offset="100">
                 The two primary species of coffee cultivated globally are Arabica and Robusta. Each has distinct characteristics that influence flavor, growing conditions, and market value.
             </p>
-            <ul>
+            <ul data-aos="fade-up" data-aos-offset="100">
                 <li>
                     <strong>Arabica:</strong> Accounts for about 60-70% of the world's coffee production. It's known for its delicate aroma, complex flavors (often with notes of fruit, chocolate, or nuts), and higher acidity. Arabica plants prefer high altitudes, specific rainfall patterns, and are more susceptible to disease.
                 </li>
@@ -67,23 +70,23 @@
                     <strong>Robusta:</strong> Makes up about 30-40% of global production. It's more robust (hence the name) and easier to grow in hotter climates and lower altitudes. Robusta beans have a stronger, bolder, and more bitter flavor with higher caffeine content. They are often used in espresso blends for their crema and in instant coffee.
                 </li>
             </ul>
-            <img src="images/H.jpg" alt="Coffee plants growing in a plantation" class="content-image-full">
-            <p class="image-caption">The Bean belt on map</p>
-            <p>
+            <img src="images/H.jpg" alt="Coffee plants growing in a plantation" class="content-image-full" data-aos="zoom-in" data-aos-duration="1000">
+            <p class="image-caption" data-aos="fade-up" data-aos-offset="50">The Bean belt on map</p>
+            <p data-aos="fade-up" data-aos-offset="100">
                 Beyond these two, there are lesser-known species like Liberica and Excelsa, each contributing unique profiles, though they make up a very small percentage of the market. The choice of variety depends on the local climate, soil, and desired flavor profile.
             </p>
             <div class="clearfix"></div>
 
-            <blockquote>
+            <blockquote data-aos="fade-left" data-aos-offset="150">
                 <p>"The best coffee in the world is the one you like the most."</p>
                 <cite>— Unknown</cite>
             </blockquote>
 
-            <h3>From Cherry to Bean: Processing Methods</h3>
-            <p>
+            <h3 data-aos="fade-right" data-aos-offset="150">From Cherry to Bean: Processing Methods</h3>
+            <p data-aos="fade-up" data-aos-offset="100">
                 After harvesting, coffee cherries undergo processing to separate the bean from the fruit. The two main methods significantly impact the final flavor profile:
             </p>
-            <ul>
+            <ul data-aos="fade-up" data-aos-offset="100">
                 <li>
                     <strong>Wet Method (Washed Coffee):</strong> This method involves removing the pulp from the coffee cherry after harvest, typically through a pulping machine, and then fermenting the beans in water to break down the remaining mucilage. After fermentation, the beans are washed clean and dried. This method generally produces cleaner, brighter, and more acidic coffees with distinct flavors.
                 </li>
@@ -91,14 +94,14 @@
                     <strong>Dry Method (Natural/Unwashed Coffee):</strong> In this oldest and simplest method, freshly picked coffee cherries are spread out to dry in the sun, often on large patios or raised beds. The cherries are raked regularly to ensure even drying and prevent mold. Once dried, the outer layers of the fruit are removed. This method often results in coffees with heavier body, lower acidity, and more intense, sometimes fruity or wine-like flavors.
                 </li>
             </ul>
-            <img src="images/I.jpg" alt="Coffee beans drying in the sun" class="content-image-full">
-            <p class="image-caption">The process of Cherry to bean</p>
-            <p>
+            <img src="images/I.jpg" alt="Coffee beans drying in the sun" class="content-image-full" data-aos="zoom-in" data-aos-duration="1000">
+            <p class="image-caption" data-aos="fade-up" data-aos-offset="50">The process of Cherry to bean</p>
+            <p data-aos="fade-up" data-aos-offset="100">
                 There are also hybrid methods like the Honey Process (Pulped Natural), which involves pulping the cherry but leaving some of the mucilage on the bean to dry, creating a balance between the washed and natural characteristics. The chosen processing method is a crucial step in defining the coffee's taste.
             </p>
             <div class="clearfix"></div>
 
-            <a href="Brewing.html" class="btn-primary">Next: The Art of Brewing</a>
+            <a href="Brewing.html" class="btn-primary" data-aos="fade-in" data-aos-offset="100">Next: The Art of Brewing</a>
 
         </main>
     </div>
@@ -140,6 +143,16 @@
       }
     </style>
     <!-- Dify Chatbot Code Ends -->
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            mirror: true, // Animations reverse on scroll up
+            once: false,  // Animations repeat every time you scroll past them
+            duration: 800 // Default animation duration in ms
+        });
+    </script>
 
 </body>
 </html>
