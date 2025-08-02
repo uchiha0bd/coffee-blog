@@ -1,0 +1,5 @@
+# gitignore file for Coffee Chronicles project
+# This file specifies intentionally untracked files to ignore in the repository.
+# It is used to avoid committing sensitive information or unnecessary files.
+.env
+*.env
