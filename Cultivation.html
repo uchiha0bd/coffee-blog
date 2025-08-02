@@ -118,10 +118,10 @@
         <p>© 2025 The Coffee Chronicles. All rights reserved.</p>
     </footer>
 
-    <!-- Dify Chatbot Code -->
+    <!-- Dify Chatbot Code (Add this block if it's not already in your Home.html) -->
     <script>
      window.difyChatbotConfig = {
-      token: 'AKiDGDZQXfPG8zB6',
+      token: '6Y4NIVXrfsNSUoOz',
       baseUrl: 'http://botfather.store',
       systemVariables: {
         // user_id: 'YOU CAN DEFINE USER ID HERE',
@@ -130,16 +130,20 @@
     </script>
     <script
      src="http://botfather.store/embed.min.js"
-     id="AKiDGDZQXfPG8zB6"
+     id="6Y4NIVXrfsNSUoOz"
      defer>
     </script>
     <style>
       #dify-chatbot-bubble-button {
-        background-color: #1C64F2 !important;
+        background-color: #7D8F69 !important; /* Your chosen green color */
       }
       #dify-chatbot-bubble-window {
         width: 24rem !important;
         height: 40rem !important;
+        position: fixed !important; /* ADDED: Makes it fixed relative to the viewport */
+        bottom: 80px !important;   /* ADDED: Adjust as needed to position above the bubble */
+        right: 20px !important;    /* ADDED: Adjust as needed to align with the bubble */
+        z-index: 1000 !important;  /* ADDED: Ensures it's on top of other content */
       }
     </style>
     <!-- Dify Chatbot Code Ends -->
