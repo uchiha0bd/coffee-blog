@@ -484,3 +484,103 @@ cite {
     transform: translateY(0);
     filter: blur(0px);
 }
+
+
+/* --- Custom Chatbot Interface Styles --- */
+.chatbot-container {
+    max-width: 800px;
+    margin: 60px auto; /* Adjust margin to center it below your main content */
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+    font-family: 'Lato', sans-serif; /* Ensure consistent font */
+}
+
+.chat-history {
+    height: 400px; /* Fixed height for chat display */
+    overflow-y: auto; /* Adds scrollbar if content exceeds height */
+    padding: 20px;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between messages */
+}
+
+/* Styles for user messages */
+.user-message {
+    align-self: flex-end; /* Aligns to the right */
+    background-color: var(--color-accent); /* Your green accent color */
+    color: var(--color-text-light); /* White text */
+    padding: 10px 15px;
+    border-radius: 15px 15px 0 15px; /* Rounded corners, flat on bottom-right */
+    max-width: 80%; /* Messages won't take up full width */
+    word-wrap: break-word; /* Prevents long words from overflowing */
+}
+
+/* Styles for AI messages */
+.ai-message {
+    align-self: flex-start; /* Aligns to the left */
+    background-color: var(--color-background-light); /* Your creamy off-white */
+    color: var(--color-text-dark); /* Dark text */
+    padding: 10px 15px;
+    border-radius: 15px 15px 15px 0; /* Rounded corners, flat on bottom-left */
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+/* Simple loading indicator */
+.loading-message::after {
+    content: '...';
+    animation: dot-animation 1s infinite step-start both;
+}
+
+@keyframes dot-animation {
+    25% { content: '.'; }
+    50% { content: '..'; }
+    75% { content: '...'; }
+}
+
+
+/* Chat Input Area */
+.chat-input-area {
+    display: flex;
+    padding: 15px 20px;
+    gap: 10px;
+    background-color: #fdfdfd;
+}
+
+#userInput {
+    flex-grow: 1; /* Allows input field to take up most space */
+    padding: 10px 15px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none; /* Remove default focus outline */
+    transition: border-color 0.3s ease;
+}
+#userInput:focus {
+    border-color: var(--color-primary-light); /* Highlight border on focus */
+}
+
+#sendBtn {
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+#sendBtn:hover {
+    background-color: #6a7c5a; /* Slightly darker green */
+    transform: translateY(-1px);
+}
+#sendBtn:active {
+    transform: translateY(0);
+}

@@ -206,6 +206,20 @@
 
         </main>
     </div>
+    <!-- Custom Chatbot Interface -->
+    <div class="chatbot-container">
+        <div class="chat-history" id="chatHistory">
+            <!-- Chat messages will be dynamically inserted here by JavaScript -->
+        </div>
+
+        
+
+        <div class="chat-input-area">
+            <input type="text" id="userInput" placeholder="Ask about the document or general questions...">
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+    <!-- End Custom Chatbot Interface -->
 
     <!-- Footer Section (Consistent across all pages) -->
     <footer class="footer">
@@ -259,6 +273,8 @@
             duration: 800 // Default animation duration in ms
         });
     </script>
+
+    <script src="js/chatbot.js"></script>
 
 </body>
 </html>
