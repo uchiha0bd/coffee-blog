@@ -488,18 +488,132 @@ cite {
 
 /* --- Custom Chatbot Interface Styles --- */
 .chatbot-container {
-    max-width: 800px;
-    margin: 60px auto; /* Adjust margin to center it below your main content */
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    overflow: hidden;
-    font-family: 'Lato', sans-serif; /* Ensure consistent font */
+    max-width: 800px; /* Keep this */
+    margin: 60px auto; /* Keep this */
+    border: 1px solid var(--color-border); /* Keep this */
+    border-radius: 8px; /* Keep this */
+    background-color: #fff; /* Keep this */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Keep this */
+    overflow: hidden; /* Keep this */
+    font-family: 'Lato', sans-serif; /* Keep this */
+
+    /* NEW: Styles to control visibility and position for the pop-up */
+    position: fixed; /* Make it fixed relative to the viewport */
+    bottom: 100px; /* Position it above the trigger button (adjust as needed) */
+    right: 20px; /* Position it on the right side (adjust as needed) */
+    width: 380px; /* Set a specific width for the chat window */
+    height: 500px; /* Set a specific height for the chat window */
+    z-index: 999; /* Ensure it's above most content, but below very high z-index elements */
+    
+    /* Initial hidden state */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px); /* Starts slightly below */
+    transition: opacity 0.3s ease-out, visibility 0.3s ease-out, transform 0.3s ease-out; /* Smooth transition */
+
+    /* --- FLEXBOX FIX --- */
+    display: flex;
+    flex-direction: column;
+    /* --- END FLEXBOX FIX --- */
+}
+
+/* NEW: Style for when the chatbot is active (visible) */
+.chatbot-container.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* NEW: Styles for the Chatbot Trigger Button (coffee box icon) */
+.chatbot-trigger-button {
+    position: fixed; /* Keep it fixed on screen */
+    bottom: 20px; /* Distance from bottom of screen */
+    right: 20px; /* Distance from right of screen */
+    width: 70px; /* Size of the button's bounding box (adjust for your SVG) */
+    height: 70px; /* Size of the button's bounding box (adjust for your SVG) */
+    background-color: transparent; /* Make the div itself transparent */
+    border-radius: 0; /* Ensure no unwanted circular border-radius */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Keep a subtle shadow for floating effect */
+    display: flex; /* Use flexbox to center the SVG */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's on top of everything */
+    transition: transform 0.2s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Add background-color transition */
+}
+
+/* Style the SVG directly inside the button */
+.chatbot-trigger-button svg {
+    width: 100%; /* Make SVG fill the div's width */
+    height: 100%; /* Make SVG fill the div's height */
+    
+    /* Attempt to apply fill and stroke */
+    fill: var(--color-accent) !important; /* Force the fill color, using !important */
+    stroke: var(--color-accent) !important; /* Apply stroke color as well, in case it's an outline */
+    stroke-width: 0.5px; /* Adjust if your SVG has thin lines, or set to 0 to remove stroke entirely */
+    transition: fill 0.3s ease, stroke 0.3s ease; /* Smooth color transition on hover */
+}
+
+.chatbot-trigger-button:hover {
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    background-color: rgba(125, 143, 105, 0.1); /* Subtle background highlight on hover (adjust opacity) */
+}
+
+.chatbot-trigger-button:hover svg {
+    fill: #6a7c5a !important; /* Darker green on hover for the coffee shape, with !important */
+    stroke: #6a7c5a !important; /* Darker green on hover for the stroke, with !important */
+}
+
+/* NEW: Styles for the Chat Header */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fdfdfd; /* A very light background */
+    border-bottom: 1px solid var(--color-border);
+    flex-shrink: 0; /* Prevents the header from shrinking */
+}
+
+.chat-header h4 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--color-primary-dark);
+}
+
+#resetBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#resetBtn:hover {
+    background-color: #e9e9e9;
+    transform: rotate(90deg);
+}
+
+#resetBtn svg {
+    fill: var(--color-primary-light);
+    transition: fill 0.2s ease;
+}
+
+#resetBtn:hover svg {
+    fill: var(--color-primary-dark);
 }
 
 .chat-history {
-    height: 400px; /* Fixed height for chat display */
+    /* --- FLEXBOX FIX --- */
+    flex: 1; /* This makes the chat history take up all available space */
+    /* REMOVED: height: 400px; */
+    /* --- END FLEXBOX FIX --- */
     overflow-y: auto; /* Adds scrollbar if content exceeds height */
     padding: 20px;
     border-bottom: 1px solid var(--color-border);
@@ -542,6 +656,46 @@ cite {
     75% { content: '...'; }
 }
 
+/* --- Suggested Questions Area Styles --- */
+.suggested-questions-area {
+    padding: 15px 20px;
+    border-top: 1px solid var(--color-border);
+    background-color: #fcfcfc;
+    text-align: center;
+}
+
+.suggested-questions-area p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 10px;
+    margin-top: 0; /* ADDED to remove extra space */
+}
+
+.question-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow questions to wrap to next line */
+    gap: 8px; /* Space between questions */
+    justify-content: center; /* Center the questions */
+}
+
+.suggested-question-item {
+    background-color: var(--color-background-light); /* Creamy background for the tag */
+    color: var(--color-primary-dark); /* Dark text */
+    border: 1px solid var(--color-border);
+    border-radius: 20px; /* Pill shape */
+    padding: 8px 15px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+    white-space: nowrap; /* Prevent text from wrapping within the tag */
+}
+
+.suggested-question-item:hover {
+    background-color: var(--color-primary-light); /* Darker background on hover */
+    color: var(--color-text-light); /* White text on hover */
+    transform: translateY(-1px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
 
 /* Chat Input Area */
 .chat-input-area {
