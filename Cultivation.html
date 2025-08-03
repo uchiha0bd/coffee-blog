@@ -101,7 +101,8 @@
             </p>
             <div class="clearfix"></div>
 
-            <a href="Brewing.html" class="btn-primary" data-aos="fade-in" data-aos-offset="100">Next: The Art of Brewing</a>
+            <a href="History.html" class="btn-secondary">Previous: History</a> 
+            <a href="Brewing.html" class="btn-primary">Next: The Art of Brewing</a>
 
         </main>
     </div>
@@ -118,35 +119,44 @@
         <p>© 2025 The Coffee Chronicles. All rights reserved.</p>
     </footer>
 
-    <!-- Dify Chatbot Code (Add this block if it's not already in your Home.html) -->
-    <script>
-     window.difyChatbotConfig = {
-      token: '6Y4NIVXrfsNSUoOz',
-      baseUrl: 'http://botfather.store',
-      systemVariables: {
-        // user_id: 'YOU CAN DEFINE USER ID HERE',
-      },
-     }
-    </script>
-    <script
-     src="http://botfather.store/embed.min.js"
-     id="6Y4NIVXrfsNSUoOz"
-     defer>
-    </script>
-    <style>
-      #dify-chatbot-bubble-button {
-        background-color: #7D8F69 !important; /* Your chosen green color */
-      }
-      #dify-chatbot-bubble-window {
-        width: 24rem !important;
-        height: 40rem !important;
-        position: fixed !important; /* ADDED: Makes it fixed relative to the viewport */
-        bottom: 80px !important;   /* ADDED: Adjust as needed to position above the bubble */
-        right: 20px !important;    /* ADDED: Adjust as needed to align with the bubble */
-        z-index: 1000 !important;  /* ADDED: Ensures it's on top of other content */
-      }
-    </style>
-    <!-- Dify Chatbot Code Ends -->
+    <!-- ==================== CUSTOM CHATBOT HTML (REPLACES DIFY) ==================== -->
+    <!-- Custom Chatbot Interface -->
+    <div class="chatbot-container">
+        <!-- CHAT HEADER with RESET button -->
+        <div class="chat-header">
+            <h4>Coffee Bot</h4>
+            <button id="resetBtn" title="Reset Chat">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18" height="18">
+                    <path d="M496 48V192c0 17.7-14.3 32-32 32H320c-17.7 0-32-14.3-32-32s14.3-32 32-32h58.7L317.3 90.7c-25.9-25.9-60.5-42.7-99.3-42.7C124.1 48 48 124.1 48 218.7c0 13.3 10.7 24 24 24s24-10.7 24-24c0-70.6 57.5-128.1 128.1-128.1 27.2 0 52.2 8.5 73.2 23.4l37.8-37.8v51.9h51.9l-67.3-67.3c-24.5-24.5-57.2-40.1-92.8-40.1C95.1 24 16 103.1 16 192c0 53 26.1 100.2 67.2 130.3C133.2 360.3 203.4 384 288 384c123.7 0 224-100.3 224-224V48c0-17.7-14.3-32-32-32s-32 14.3-32 32z"/>
+                </svg>
+            </button>
+        </div>
+        <div class="chat-history" id="chatHistory">
+            <!-- Chat messages will be dynamically inserted here by JavaScript -->
+        </div>
+        <div class="suggested-questions-area" id="suggestedQuestionsArea">
+            <p>Try asking:</p>
+            <div class="question-list" id="questionList">
+                <!-- Suggested questions will be dynamically added here by JavaScript -->
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="userInput" placeholder="Ask about the document or general questions...">
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+    <!-- End Custom Chatbot Interface -->
+
+    <!-- Your custom chatbot trigger button -->
+    <div class="chatbot-trigger-button" id="chatbotTrigger">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 645">
+            <path d="M0 0 C93.39 0 186.78 0 283 0 C283 9.24 283 18.48 283 28 C283.99 27.67 284.98 27.34 286 27 C306.28778065 25.75622651 326.32755609 29.36670798 342.07836914 43.13232422 C344.47239756 45.34609194 346.74239137 47.64639856 349 50 C349.60199219 50.60585938 350.20398438 51.21171875 350.82421875 51.8359375 C363.69846087 65.69010881 368.37860964 84.52427047 368.21484375 102.95703125 C367.45328422 122.58256235 358.76652618 140.46008639 344.5625 153.875 C328.65775119 167.06430389 309.85060445 173.34326003 289.15429688 172.20410156 C278.94404162 171.2367655 269.39974855 167.933656 260 164 C259.54898926 165.10565308 259.54898926 165.10565308 259.08886719 166.23364258 C251.70451151 184.29963897 244.08541078 202.23380548 236 220 C235.47744629 221.14952148 234.95489258 222.29904297 234.41650391 223.48339844 C224.47192337 245.2719173 213.71959188 266.56081625 203 288 C160.76 288 118.52 288 75 288 C70.19490284 278.38980569 65.43831393 268.85922797 61.0625 259.0625 C60.79842346 258.47227051 60.53434692 257.88204102 60.26226807 257.27392578 C26.55471774 181.77376024 5.37679353 111.61506539 0.8125 29 C0.76952789 28.22690491 0.72655579 27.45380981 0.68228149 26.6572876 C0.56108419 24.43839896 0.44537566 22.21930246 0.33203125 20 C0.26733643 18.741875 0.2026416 17.48375 0.13598633 16.1875 C-0.03915369 10.7943193 0 5.39602373 0 0 Z " transform="translate(136,259)"/>
+            <path d="M0 0 C-0.34582906 4.26522507 -1.64424207 7.60836688 -3.4375 11.4375 C-7.07322447 19.2569422 -9.00563203 25.44896074 -7 34 C-3.40123232 43.38250146 6.42324991 50.9271599 13.875 57.375 C18.13549096 61.07683796 22.18205333 64.96271703 26.1875 68.9375 C26.87263672 69.60201172 27.55777344 70.26652344 28.26367188 70.95117188 C34.25198103 76.89337278 39.57660489 83.00393771 40.3125 91.6875 C40.13272457 99.91222577 35.11030727 105.66186661 29.7109375 111.46484375 C23.71945366 117.0678308 15.15662422 124.8016683 6.75 125.125 C5.8425 125.08375 4.935 125.0425 4 125 C4.98483314 120.07583431 6.71214461 116.77787435 9.5625 112.625 C12.74112624 107.71682713 14.9245765 103.93105991 14 98 C9.71018368 83.61037343 -3.67290453 72.97472646 -14.43554688 63.21582031 C-31.22742514 47.92877662 -31.22742514 47.92877662 -32.37109375 37.671875 C-32.67596254 28.98773377 -31.78068217 23.428114 -26.15234375 16.8359375 C-7.76325098 -2.58775033 -7.76325098 -2.58775033 0 0 Z " transform="translate(226,98)"/>
+            <path d="M0 0 C0.99 0.99 1.98 1.98 3 3 C-0.80765419 12.60611233 -0.80765419 12.60611233 -2.6875 16.8125 C-5.0110126 22.45531632 -6.22204934 28.31485639 -4.24609375 34.2734375 C-1.25631484 41.33166066 2.78518713 45.93097989 8.546875 50.87109375 C42.06472824 79.95903963 42.06472824 79.95903963 43.375 92.625 C43.25117768 100.13688756 38.176625 106.51334043 33.296875 111.87890625 C27.24029841 117.47196933 18.18252576 125.80067209 9.75 126.125 C8.8425 126.08375 7.935 126.0425 7 126 C7.54438065 121.40678829 9.43260046 118.54608361 12 114.75 C16.67971791 107.42626105 16.67971791 107.42626105 17 99 C13.02762821 85.77795091 1.28193741 75.35339912 -9.00390625 66.7265625 C-28.38267568 49.9644958 -28.38267568 49.9644958 -29.23828125 38.92578125 C-29.45361523 28.44241648 -28.17256719 23.13860546 -21 15.5625 C-14.85448301 9.69215542 -7.79640544 3.53708655 0 0 Z " transform="translate(319,97)"/>
+        </svg>
+    </div>
+    <!-- End custom chatbot trigger button -->
+    <!-- ========================================================================= -->
 
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -157,6 +167,20 @@
             duration: 800 // Default animation duration in ms
         });
     </script>
+    
+    
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            mirror: true, // Animations reverse on scroll up
+            once: false,  // Animations repeat every time you scroll past them
+            duration: 800 // Default animation duration in ms
+        });
+    </script>
+
+    <!-- Link to your custom chatbot JavaScript -->
+    <script src="js/chatbot.js"></script>
 
 </body>
 </html>
