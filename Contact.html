@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with The Coffee Chronicles. Send us a message for inquiries, feedback, or collaborations. We'd love to hear from you.">
+    <title>Contact Us - The Coffee Chronicles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .hero.contact-hero {
+            background: url('images/R.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+        }
+        /* Style for the form submission message */
+        .form-message {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            display: none; /* Hidden by default */
+        }
+        .form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="images/J.jpg" alt="Coffee Bean Logo" class="logo-img">
+                The Coffee <span>Chronicles</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="History.html">History</a></li>
+                    <li><a href="Cultivation.html">Cultivation</a></li>
+                    <li><a href="Brewing.html">Brewing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero contact-hero">
+        <div class="hero-content" data-aos="fade-down" data-aos-duration="1000">
+            <h1>Get in Touch</h1>
+            <p>Have a question, a suggestion, or just want to talk about coffee? We're here to listen.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <main class="article-content" data-aos="fade-up">
+            <h2 data-aos="from-coffee-heat" data-aos-duration="1200">Contact Form</h2>
+            <p>
+                Please fill out the form below to send us a message. We do our best to respond within 24-48 hours. Whether it’s feedback on our articles, a collaboration proposal, or a question you can't find the answer to, we look forward to hearing from you.
+            </p>
+            
+            <!-- This div will display success/error messages -->
+            <div id="form-message-container" class="form-message"></div>
+
+            <!-- Updated Contact Form -->
+            <form id="contactForm" action="/send-email" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="8" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+            
+            <div class="contact-info">
+                <h3>Other Ways to Connect</h3>
+                <p>You can also reach us via email or follow us on our (fictional) social media channels.</p>
+                <p><strong>Email:</strong> <a href="mailto:contact@thecoffeechronicles.com">contact@thecoffeechronicles.com</a></p>
+            </div>
+        </main>
+    </div>
+
+    <!-- ... (your existing footer and chatbot HTML) ... -->
+    <footer class="footer">
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </ul>
+        </nav>
+        <p>© 2025 The Coffee Chronicles. All rights reserved.</p>
+    </footer>
+
+    <div class="chatbot-container"><!-- ... --></div>
+    <div class="chatbot-trigger-button" id="chatbotTrigger"><!-- ... --></div>
+
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ mirror: true, once: false, duration: 800 });
+    </script>
+    
+    <!-- Link to your custom chatbot JavaScript -->
+    <script src="js/chatbot.js"></script>
+
+    <!-- ============== NEW JAVASCRIPT FOR CONTACT FORM ============== -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent the default page reload
+
+            const form = event.target;
+            const formData = new FormData(form);
+            const messageContainer = document.getElementById('form-message-container');
+            const submitButton = form.querySelector('button[type="submit"]');
+
+            // Disable button to prevent multiple submissions
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    messageContainer.textContent = result.message;
+                    messageContainer.className = 'form-message success'; // Apply success style
+                    form.reset(); // Clear the form fields
+                } else {
+                    messageContainer.textContent = result.message || 'An unknown error occurred.';
+                    messageContainer.className = 'form-message error'; // Apply error style
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                messageContainer.textContent = 'A network error occurred. Please try again.';
+                messageContainer.className = 'form-message error';
+            } finally {
+                messageContainer.style.display = 'block'; // Show the message container
+                // Re-enable the button
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+            }
+        });
+    </script>
+    <!-- ============================================================= -->
+
+</body>
+</html>
