@@ -738,3 +738,58 @@ cite {
 #sendBtn:active {
     transform: translateY(0);
 }
+
+/* --- Contact Form Styles --- */
+.contact-form {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box; /* Important for padding and border */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary-light);
+    box-shadow: 0 0 5px rgba(140, 106, 90, 0.3); /* Subtle glow effect */
+}
+
+.contact-form button.btn-primary {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* --- Other Contact Info Section --- */
+.contact-info {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.contact-info h3 {
+    text-align: center; /* Override default h3 alignment */
+}
