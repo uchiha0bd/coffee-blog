@@ -6,9 +6,6 @@ __pycache__/
 # Environment variables (contains your API key)
 .env
 
-# Dify Chatbot embed script (if you had it locally instead of CDN)
-embed.min.js
-
 # Operating System / IDE specific files
 .DS_Store
 .vscode/
