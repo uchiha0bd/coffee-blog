@@ -137,12 +137,31 @@ with app.app_context():
 # --- Flask Routes ---
 
 @app.route('/')
-def index():
-    return send_from_directory('.', 'Home.html')
+def home():
+    return render_template('home.html')
 
+@app.route('/history')
+def history():
+    return render_template('history.html')
+
+@app.route('/cultivation')
+def cultivation():
+    return render_template('cultivation.html')
+
+@app.route('/brewing')
+def brewing():
+    return render_template('brewing.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+
+# This generic route is for serving assets like images, css, js
 @app.route('/<path:filename>')
-def serve_static_files(filename):
-    if '..' in filename or filename.startswith('/'):
+def serve_static(filename):
+    # Security check to prevent people from accessing sensitive files
+    if '..' in filename or filename.startswith('/') or '.html' in filename:
         return "Forbidden", 403
     return send_from_directory('.', filename)
 
